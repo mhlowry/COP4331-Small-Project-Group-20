@@ -47,15 +47,15 @@
                             <input type="password" placeholder="Password" class="input">
                         </div>
 
-                        <div class="field button-field">
-                            <button>Login</button>
-                        </div>
+                    <div class="field button-field">
+                        <button type="button" id="loginbutton" class="buttons" onclick="doLogin();">Login</button>
+                    </div>
 
-                        <div class="form-link">
-                            <span>Don't have an account? <a href="#" class="link register-link">Register</a></span>
-                        </div>
-                    </form>
-                </div>
+                    <div class="form-link">
+                        <span>Don't have an account? <a href="#" class="link register-link" onclick="doRegister();">Register</a></span>
+                    </div>
+                </form>
+            </div>
 
                 <!-- register -->
                 <div class="form register">
@@ -77,9 +77,9 @@
                             <input type="lastname" placeholder="Last Name" class="input">
                         </div>
 
-                        <div class="field button-field">
-                            <button>Register</button>
-                        </div>
+                    <div class="field button-field">
+                        <button type="button" id="registerbutton" class="buttons" onclick="doRegister();">Register</button>
+                    </div>
 
                         <div class="form-link">
                             <span>Already have an account? <a href="#" class="link login-link">Login</a></span>
