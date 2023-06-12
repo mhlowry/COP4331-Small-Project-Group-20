@@ -14,38 +14,42 @@ const id = []
  * search contact function
 */ 
 
-const forms= document.querySelector(".forms"),
-        //pwShowHide = document.querySelectorAll(".forms"),
-        links = document.querySelectorAll(".link");
+window.onload = function() {
+    document.getElementById("loginbutton").addEventListener("click", function(event) {
+      event.preventDefault();
+      doLogin();
+    });
+  
+    document.getElementById("registerbutton").addEventListener("click", function(event) {
+      event.preventDefault();
+      doRegister();
+    });
+  
+    document.querySelector(".register-link").addEventListener('click', function(event) {
+      event.preventDefault();
+      toggleForm('register');
+    });
+  
+    document.querySelector(".login-link").addEventListener('click', function(event) {
+      event.preventDefault();
+      toggleForm('login');
+    });
+  };
+  
+  function toggleForm(formType) {
+    const loginForm = document.getElementById('loginForm');
+    const registerForm = document.getElementById('registerForm');
+  
+    if (formType === 'register') {
+      loginForm.style.display = 'none';
+      registerForm.style.display = 'block';
+    } else if (formType === 'login') {
+      registerForm.style.display = 'none';
+      loginForm.style.display = 'block';
+    }
+  }
+  
 
-        document.getElementById("loginbutton").addEventListener("click", function(event){
-            event.preventDefault();
-            doLogin();
-        });
-        
-        document.getElementById("registerbutton").addEventListener("click", function(event){
-            event.preventDefault();
-            doRegister();
-        });
-        
-
-        document.querySelector('.register-link').addEventListener('click', function(e) {
-            e.preventDefault();
-            forms.classList.toggle("show-register");
-        });
-        
-        document.querySelector('.login-link').addEventListener('click', function(e) {
-            e.preventDefault();
-            forms.classList.toggle("show-register");
-        });
-        
-       
-       
-        
-document.getElementById("registerbutton").addEventListener("click", function(event){
-    event.preventDefault();
-    doRegister();
-});
 
 
 function doLogin(){
@@ -154,7 +158,7 @@ function saveCookie(){
     let minutes = 20;
 	let date = new Date();
 	date.setTime(date.getTime()+(minutes*60*1000));	
-	document.cookie = "firstname=" + firstName + ",lastname=" + lastName + ",userId=" + userId + ";expires=" + date.toGMTString();
+	document.cookie = "firstname=" + firstname + ";lastname=" + lastname + ";userId=" + userId + ";expires=" + date.toGMTString();
 }
 
 function readCookie()

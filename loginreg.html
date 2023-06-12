@@ -35,59 +35,60 @@
                 <a href="index.html"><img src="Contactopia.png" alt="Contactopia Logo" width="400" height="400"></a>            
             </section>  
 
-            <section class="container forms forms-column">
-                <div class="form login">
+            <!-- Login -->
+            <div class="forms forms-row">
+                <div class="form login active" id="loginForm">
                     <header>Login</header>
                     <form action="#">
                         <div class="field input-field">
-                            <input type="username" placeholder="Username" class="input">
+                            <input type="text" id="loginname" placeholder="Username" class="input">
                         </div>
-
+            
                         <div class="field input-field">
-                            <input type="password" placeholder="Password" class="input">
+                            <input type="password" id="loginpassword" placeholder="Password" class="input">
                         </div>
-
-                    <div class="field button-field">
-                        <button type="button" id="loginbutton" class="buttons" onclick="doLogin();">Login</button>
-                    </div>
-
-                    <div class="form-link">
-                        <span>Don't have an account? <a href="#" class="link register-link">Register</a></span>
-                    </div>
-                </form>
-            </div>
-
-                <!-- register -->
-                <div class="form register">
+            
+                        <div class="field button-field">
+                            <button type="button" id="loginbutton" class="buttons" onclick="doLogin();">Login</button>
+                        </div>
+            
+                        <div class="form-link">
+                            <span>Don't have an account? <a href="#" class="link register-link">Register</a></span>
+                        </div>
+                    </form>
+                </div>
+            
+                <!-- Register -->
+                <div class="form register" id="registerForm">
                     <header>Register</header>
                     <form action="#">
                         <div class="field input-field">
-                            <input type="username" placeholder="Username" class="input">
+                            <input type="text" id="username" placeholder="Username" class="input">
                         </div>
-
+            
                         <div class="field input-field">
-                            <input type="password" placeholder="Password" class="input">
+                            <input type="password" id="password" placeholder="Password" class="input">
                         </div>
-
+            
                         <div class="field input-field">
-                            <input type="firstname" placeholder="First Name" class="input">
+                            <input type="text" id="firstname" placeholder="First Name" class="input">
                         </div>
-
+            
                         <div class="field input-field">
-                            <input type="lastname" placeholder="Last Name" class="input">
+                            <input type="text" id="lastname" placeholder="Last Name" class="input">
                         </div>
-
-                    <div class="field button-field">
-                        <button type="button" id="registerbutton" class="buttons" onclick="doRegister();">Register</button>
-                    </div>
-
+            
+                        <div class="field button-field">
+                            <button type="button" id="registerbutton" class="buttons" onclick="doRegister();">Register</button>
+                        </div>
+            
                         <div class="form-link">
                             <span>Already have an account? <a href="#" class="link login-link">Login</a></span>
                         </div>
                     </form>
                 </div>
-            </section>
-        </div>
+            </div>
+
         <!-- Java Script-->
         <script src="scriptloginreg.js"></script>
     </body>
