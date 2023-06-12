@@ -107,7 +107,7 @@ form .field{
     border-bottom-width: 2px;
 }
 .field button{
-    background-color: #F28660;);
+    background-color: #F28660;
     transition: all 0.3s ease;
     cursor: pointer;
     color: white;
