@@ -6,34 +6,43 @@
 #FFE79D - tannish orange
 */
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,500;0,700;1,300;1,500;1,700&display=swap');
-*{
+
+* {
     font-family: 'Ubuntu', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color:#9EAA58
 }
-body{
+
+body {
     background-color: #FFFCE9;
-    color:#9EAA58;
-}
-.header {
-    margin: 0;
-    padding: 0;
-    margin-bottom: -150px;           
-}
-.add-contact{
-    display: none; /* Hides the add contact form by default */
-}
-a:link, a:visited {
     color: #9EAA58;
+}
+
+a:link,
+a:visited {
+    color: #F28660;
     text-decoration: none;
 }
-a:hover, a:active {
+
+a:hover,
+a:active {
     color: #4c5229;
     text-decoration: underline;
 }
-.container{
+
+
+.header {
+    margin: 0;
+    padding: 0;
+    margin-bottom: -150px;
+}
+
+.add-contact {
+    display: none; /* Hides the add contact form by default */
+}
+
+.container {
     height: 85vh;
     width: 100%;
     display: flex;
@@ -41,7 +50,8 @@ a:hover, a:active {
     justify-content: center;
     column-gap: 30px;
 }
-.form{
+
+.form {
     position: absolute;
     border-radius: 6px;
     max-width: 400px;
@@ -49,6 +59,7 @@ a:hover, a:active {
     width: 100%;
     background: #FFE79D;
 }
+
 .parent-container {
     display: flex;
     flex-direction: column;
@@ -56,14 +67,16 @@ a:hover, a:active {
     padding: 30px;
 }
 
-form .field{
+form .field {
     position: relative;
     height: 40px;
     width: 100%;
     margin-top: 10px;
     border-radius: 6px;
 }
-.field input, .field button{
+
+.field input,
+.field button {
     height: 100%;
     width: 100%;
     border: none;
@@ -73,37 +86,45 @@ form .field{
     font-weight: 400;
     border-radius: 6px;
 }
-.field input{
+
+.field input {
     padding: 0 15px;
     border: 1px solid #FFFCE9;
     outline: none;
     background-color: #FFFCE9;
 }
-.field input:focus{
+
+.field input:focus {
     border-bottom-width: 2px;
 }
-.field button{
+
+.field button {
     background-color: #F28660;
     transition: all 0.3s ease;
     cursor: pointer;
     color: white;
 }
-.field button:hover, .field button:active{
+
+.field button:hover,
+.field button:active {
     background-color: #d84f1d;
     color: white;
     background-color: #e45e2d;
 }
-.field header{
+
+.field header {
     size: 300;
 }
-img[src="close_icon.png"]{
+
+img[src="close_icon.png"] {
     position: absolute;
     top: 20px;
     right: 20px;
     max-height: auto;
     max-width: 4%;
 }
-img[src="plus_icon.png"]{
+
+img[src="plus_icon.png"] {
     max-height: auto;
     max-width: 7%;
 }
