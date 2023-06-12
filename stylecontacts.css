@@ -1,26 +1,29 @@
 /* Goggle Fonts- Ubuntu */
+/*colors: 
+#9EAA58 - sage green
+#F28660 - salmon roe pink
+#FFFCE9 - spicy white
+#FFE79D - tannish orange
+*/
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,500;0,700;1,300;1,500;1,700&display=swap');
 *{
     font-family: 'Ubuntu', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color:#9EAA58;
+    color:#9EAA58
 }
-
 body{
-    background-color:#FFFCE9;
-}
-h1 {
+    background-color: #FFFCE9;
     color:#9EAA58;
-    text-align: center;
-    
 }
-.header{
-    text-align: center;
-    position: relative;
-    top: 20px;
-    font-size: 40px;
+.header {
+    margin: 0;
+    padding: 0;
+    margin-bottom: -150px;           
+}
+.add-contact{
+    display: none; /* Hides the add contact form by default */
 }
 a:link, a:visited {
     color: #9EAA58;
@@ -30,57 +33,29 @@ a:hover, a:active {
     color: #4c5229;
     text-decoration: underline;
 }
-.container.forms-row{
+.container{
     height: 85vh;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     column-gap: 30px;
-    flex-direction: row;
 }
-
-.container.forms-column{
-    height: 85vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    column-gap: 30px;
-    flex-direction: column;
-}
-
-
 .form{
-    position: relative; 
+    position: absolute;
     border-radius: 6px;
     max-width: 400px;
     padding: 30px;
     width: 100%;
     background: #FFE79D;
-    margin: auto; 
+}
+.parent-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
 }
 
-.form.register{
-    opacity: 0;
-    pointer-events: none;
-}
-.forms.show-register .form.register{
-    opacity: 1;
-    pointer-events: auto;
-}
-.forms.show-register .form.login{
-    opacity: 0;
-    pointer-events: none;
-}
-header{
-    font-size: 30px;
-    font-weight: 700;
-    text-align: center;
-}
-form{
-    margin-top: 30px;
-}
 form .field{
     position: relative;
     height: 40px;
@@ -92,14 +67,15 @@ form .field{
     height: 100%;
     width: 100%;
     border: none;
-    background: #FFFCE9;
+    background-color: #FFFCE9;
+    background: 0;
     font-size: 16px;
     font-weight: 400;
     border-radius: 6px;
 }
 .field input{
     padding: 0 15px;
-    border: 1px solid #FFFCE9;;
+    border: 1px solid #FFFCE9;
     outline: none;
     background-color: #FFFCE9;
 }
@@ -107,7 +83,7 @@ form .field{
     border-bottom-width: 2px;
 }
 .field button{
-    background-color: #F28660;);
+    background-color: #F28660;
     transition: all 0.3s ease;
     cursor: pointer;
     color: white;
@@ -115,25 +91,19 @@ form .field{
 .field button:hover, .field button:active{
     background-color: #d84f1d;
     color: white;
+    background-color: #e45e2d;
 }
-.form-link{
-    text-align: center;
-    margin-top: 10px;
-    font-size: 14px;
-    font-weight: 400;
+.field header{
+    size: 300;
 }
-.form a:link, a:visited {
-    color: #F28660;
-    text-decoration: none;
+img[src="close_icon.png"]{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    max-height: auto;
+    max-width: 4%;
 }
-.form a:hover, a:active {
-    color: #d84f1d;
-    text-decoration: underline;
+img[src="plus_icon.png"]{
+    max-height: auto;
+    max-width: 7%;
 }
-.parent-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-

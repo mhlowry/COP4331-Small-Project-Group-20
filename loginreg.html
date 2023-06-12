@@ -13,30 +13,39 @@
         .header {
             margin: 0;
             padding: 0;
-            margin-bottom: -200px;
-            
+            margin-bottom: 0px;
+        }
+        .parent-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container.forms-column {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
         </style>
     </head>
     <body>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="stylesloginreg.css">
-        <section class="header"> 
-    <a href="index.html"><img src="Contactopia.png" alt="Contactopia Logo" width="400" height="400"></a>            
-</section>  
-        
-        <section class="container forms">
-            <div class="form login">
-                <header>Login</header>
+        <div class="parent-container">
+            <section class="header"> 
+                <a href="index.html"><img src="Contactopia.png" alt="Contactopia Logo" width="400" height="400"></a>            
+            </section>  
 
-                <form action="#">
-                    <div class="field input-field">
-                        <input type="username" placeholder="Username" class="input">
-                    </div>
+            <section class="container forms forms-column">
+                <div class="form login">
+                    <header>Login</header>
+                    <form action="#">
+                        <div class="field input-field">
+                            <input type="username" placeholder="Username" class="input">
+                        </div>
 
-                    <div class="field input-field">
-                        <input type="password" placeholder="Password" class="input">
-                    </div>
+                        <div class="field input-field">
+                            <input type="password" placeholder="Password" class="input">
+                        </div>
 
                     <div class="field button-field">
                         <button type="button" id="loginbutton" class="buttons" onclick="doLogin();">Login</button>
@@ -48,40 +57,38 @@
                 </form>
             </div>
 
-            <!-- register -->
-            <div class="form register">
-                <header>Register</header>
+                <!-- register -->
+                <div class="form register">
+                    <header>Register</header>
+                    <form action="#">
+                        <div class="field input-field">
+                            <input type="username" placeholder="Username" class="input">
+                        </div>
 
-                <form action="#">
-                    <div class="field input-field">
-                        <input type="username" placeholder="Username" class="input">
-                    </div>
+                        <div class="field input-field">
+                            <input type="password" placeholder="Password" class="input">
+                        </div>
 
-                    <div class="field input-field">
-                        <input type="password" placeholder="Password" class="input">
-                    </div>
+                        <div class="field input-field">
+                            <input type="firstname" placeholder="First Name" class="input">
+                        </div>
 
-                    <div class="field input-field">
-                        <input type="firstname" placeholder="First Name" class="input">
-                    </div>
-
-                    <div class="field input-field">
-                        <input type="lastname" placeholder="Last Name" class="input">
-                    </div>
+                        <div class="field input-field">
+                            <input type="lastname" placeholder="Last Name" class="input">
+                        </div>
 
                     <div class="field button-field">
                         <button type="button" id="registerbutton" class="buttons" onclick="doRegister();">Register</button>
                     </div>
 
-                    <div class="form-link">
-                        <span>Already have an account? <a href="#" class="link login-link">Login</a></span>
-                    </div>
-                </form>
-            </div>
-        </section>
-        
+                        <div class="form-link">
+                            <span>Already have an account? <a href="#" class="link login-link">Login</a></span>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
         <!-- Java Script-->
         <script src="scriptloginreg.js"></script>
-
     </body>
 </html>
