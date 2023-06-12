@@ -18,12 +18,35 @@ const forms= document.querySelector(".forms"),
         //pwShowHide = document.querySelectorAll(".forms"),
         links = document.querySelectorAll(".link");
 
-links.forEach(link => {
-    link.addEventListener("click", e => {
-        //e.preventDefault(); //preventing form submit
-        forms.classList.toggle("show-register");
-    })
-})
+        document.getElementById("loginbutton").addEventListener("click", function(event){
+            event.preventDefault();
+            doLogin();
+        });
+        
+        document.getElementById("registerbutton").addEventListener("click", function(event){
+            event.preventDefault();
+            doRegister();
+        });
+        
+
+        document.querySelector('.register-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            forms.classList.toggle("show-register");
+        });
+        
+        document.querySelector('.login-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            forms.classList.toggle("show-register");
+        });
+        
+       
+       
+        
+document.getElementById("registerbutton").addEventListener("click", function(event){
+    event.preventDefault();
+    doRegister();
+});
+
 
 function doLogin(){
     userId = 0;
@@ -201,7 +224,7 @@ function validLogin(login, pass){
     else{
         var regex = /(?=.*[a-zA-Z])[a-zA-Z0-9-_]{3,18}$/;
 
-        if(regex.tect(pass) == false){
+        if(regex.test(pass) == false){
             console.log("INVALID PASSWORD");
         }
         else{
@@ -254,7 +277,7 @@ function validRegister(first, last, user, pass){
     else{
         var regex = /(?=.*[a-zA-Z])[a-zA-Z0-9-_]{3,18}$/;
 
-        if(regex.tezt(pass) == false){
+        if(regex.test(pass) == false){
             console.log("INVALID PASSWORD");
         }
         else{
