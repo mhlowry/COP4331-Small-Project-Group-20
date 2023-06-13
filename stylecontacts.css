@@ -128,3 +128,8 @@ img[src="plus_icon.png"] {
     max-height: auto;
     max-width: 7%;
 }
+
+input[type=image] {
+    max-height: auto;
+    max-width: 8%;
+}
