@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Contactopia</title>
-        <link rel="stylesheet" href="stylesloginreg.css">
-        <style>
-        
+<head>
+    <meta charset="UTF-8">
+    <title>Contactopia</title>
+    <link rel="stylesheet" href="stylesloginreg.css">
+    <style>
         .header {
             margin: 0;
             padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
+            position: relative;
         }
+        
         .links {
             position: absolute;
             top: 0;
@@ -20,16 +21,42 @@
             padding: 20px;
             font-size: 1em;
         }
-        </style>
-    </head>
-    <body>
-        <section class="header">
-            <div class="links">
-                <a href="loginreg.html" class="link register-link">Login/Register</a>
-            </div>
-            <a href="index.html"><img src="Contactopia.png" alt="Contactopia Logo" width="400" height="400"></a>            
-        </section>  
+        
+        .logo-container {
+            position: relative;
+        }
+        
+        .flying-car {
+            position: absolute;
+            bottom: -400px; /* Adjust the bottom position to control the vertical position of the car */
+            left: -1000px; /* Adjust the left position to start at the left edge */
+            animation: flyCar 10s linear infinite; /* Adjust the animation duration as needed */
+        }
+        
+        @keyframes flyCar {
+            0% {
+                transform: translateX(-300px); /* Adjust the starting position to match the left edge */
+            }
+            100% {
+                transform: translateX(calc(100vw + 300px)); /* Adjust the distance to fully disappear into the right edge */
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="header">
+        <div class="links">
+            <a href="loginreg.html" class="link register-link">Login/Register</a>
+        </div>
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="Contactopia.png" alt="Contactopia Logo" width="400" height="400">
+                <img src="car.png" alt="Flying Car" class="flying-car">
+            </a>
+        </div>
+    </section>
 
-        <script src="scriptloginreg.js"></script>
-    </body>
+    <script src="scriptloginreg.js"></script>
+</body>
 </html>
+
