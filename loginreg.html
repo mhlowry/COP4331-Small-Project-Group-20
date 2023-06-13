@@ -1,208 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>Contactopia</title>
-  <style>
-    a:link,
-    a:visited {
-      color: darkblue;
-      text-decoration: none;
-    }
-  
-    a:hover,
-    a:active {
-      color: rgb(0, 0, 70);
-    }
-  
-    .header {
-      margin: 0;
-      padding: 0;
-      margin-bottom: 0px;
-    }
-  
-    .parent-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .container.forms-column {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-  
-    .input-error {
-      border: 2px solid red;
-    }
-  
-    .field {
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 10px;
-    }
-  
-    .field label {
-      margin-bottom: 5px;
-    }
-  
-    .field input {
-      padding: 5px;
-      font-size: 16px;
-      border-radius: 4px;
-      border: 1px solid #ccc;
-    }
-  
-    .field .input-error {
-      border-color: red;
-    }
-  
-    .field .error-message {
-      color: red;
-      margin-top: 5px;
-    }
-  
-    .form-link {
-      margin-top: 10px;
-    }
-  
-    .form-link a {
-      color: darkblue;
-      text-decoration: none;
-    }
-  
-    .form-link a:hover {
-      color: rgb(0, 0, 70);
-    }
-  </style>
-  
-</head>
-<body>
-  <meta charset="UTF-8" />
-  <link rel="stylesheet" href="stylesloginreg.css" />
-  <div class="parent-container">
-    <section class="header">
-      <a href="index.html"
-        ><img src="Contactopia.png" alt="Contactopia Logo" width="400" height="400"
-      /></a>
-    </section>
+    <head>
+        <title>Contactopia</title>
+        <style>
+        a:link, a:visited {
+            color: darkblue;
+            text-decoration: none;
+        }
+        a:hover, a:active {
+            color: rgb(0, 0, 70);
+        }
+        .header {
+            margin: 0;
+            padding: 0;
+            margin-bottom: 0px;
+        }
+        .parent-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container.forms-column {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        </style>
+    </head>
+    <body>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="stylesloginreg.css">
+        <script src="http://146.190.219.153/scriptloginreg.js"></script>
+        <div class="parent-container">
+            <section class="header"> 
+                <a href="index.html"><img src="Contactopia.png" alt="Contactopia Logo" width="400" height="400"></a>            
+            </section>  
 
-    <!-- Login -->
-    <div class="forms forms-row">
-      <div class="form login active" id="loginForm">
-        <header>Login</header>
-        <form action="#">
-          <div class="field input-field">
-            <label for="loginname">Username</label>
-            <input
-              type="text"
-              id="loginname"
-              placeholder="Username"
-              class="input"
-            />
-          </div>
+            <!-- Login -->
+            <div class="forms forms-row">
+                <div class="form login active" id="loginForm">
+                    <header>Login</header>
+                    <form action="#">
+                        <div class="field input-field">
+                            <input type="text" id="loginname" placeholder="Username" class="input">
+                        </div>
+                        
+                        <div class="field input-field">
+                            <input type="password" id="loginpassword" placeholder="Password" class="input">
+                        </div>
+            
+                        <div class="field button-field">
+                            <button type="button" id="loginbutton" class="buttons" onclick="doLogin();">Login</button>
+                        </div>
+                        <div>
+                            <p id="usernameError">
 
-          <div class="field input-field">
-            <label for="loginpassword">Password</label>
-            <input
-              type="password"
-              id="loginpassword"
-              placeholder="Password"
-              class="input"
-            />
-          </div>
-
-          <div class="field button-field">
-            <button
-              type="button"
-              id="loginbutton"
-              class="buttons"
-              onclick="doLogin();"
-            >
-              Login
-            </button>
-          </div>
-
-          <div id="loginresult" class="error-message"></div>
-
-          <div class="form-link">
-            <span>
-              Don't have an account?
-              <a href="#" class="link register-link">Register</a>
-            </span>
-          </div>
-        </form>
-      </div>
-
-      <!-- Register -->
-      <div class="form register" id="registerForm">
-        <header>Register</header>
-        <form action="#">
-          <div id="registerresult"></div>
-
-          <div class="field input-field">
-            <label for="username">Username</label>
-            <input
-              type="text"
-              id="username"
-              placeholder="Username"
-              class="input"
-            />
-          </div>
-
-          <div class="field input-field">
-            <label for="password">Password</label>
-            <input
-              type="password"
-              id="password"
-              placeholder="Password"
-              class="input"
-            />
-          </div>
-
-          <div class="field input-field">
-            <label for="firstname">First Name</label>
-            <input
-              type="text"
-              id="firstname"
-              placeholder="First Name"
-              class="input"
-            />
-          </div>
-
-          <div class="field input-field">
-            <label for="lastname">Last Name</label>
-            <input
-              type="text"
-              id="lastname"
-              placeholder="Last Name"
-              class="input"
-            />
-          </div>
-
-          <div class="field button-field">
-            <button
-              type="button"
-              id="registerbutton"
-              class="buttons"
-              onclick="doRegister();"
-            >
-              Register
-            </button>
-          </div>
-
-          <div class="form-link">
-            <span>
-              Already have an account?
-              <a href="#" class="link login-link">Login</a>
-            </span>
-          </div>
-        </form>
-      </div>
-    </div>
-
-    <!-- JavaScript -->
-    <script src="scriptloginreg.js"></script>
-  </div>
-</body>
+                            </p>
+                            <p id="passwordError">
+                            </p>
+                            <p id="loginresult">
+                                
+                            </p>
+                        </div>
+                        <div class="form-link">
+                            <span>Don't have an account? <a href="#" class="link register-link">Register</a></span>
+                        </div>
+                    </form>
+                </div>
+            
+                <!-- Register -->
+                <div class="form register" id="registerForm">
+                    <header>Register</header>
+                    <form action="#">
+                        <div class="field input-field">
+                            <input type="text" id="username" placeholder="Username" class="input">
+                        </div>
+            
+                        <div class="field input-field">
+                            <input type="password" id="password" placeholder="Password" class="input">
+                        </div>
+            
+                        <div class="field input-field">
+                            <input type="text" id="firstname" placeholder="First Name" class="input">
+                        </div>
+            
+                        <div class="field input-field">
+                            <input type="text" id="lastname" placeholder="Last Name" class="input">
+                        </div>
+            
+                        <div class="field button-field">
+                            <button type="button" id="registerbutton" class="buttons" onclick="doRegister();">Register</button>
+                        </div>
+                        <p id ="registerUsernameError"></p>
+                        <p id ="registerPasswordError"></p>
+                        <p id ="registerFirstNameError"></p>
+                        <p id ="registerLastNameError"></p>
+                        <p id ="registerresult"></p>
+                        <div class="form-link">
+                            <span>Already have an account? <a href="#" class="link login-link">Login</a></span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+    </body>
 </html>

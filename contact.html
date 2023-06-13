@@ -12,6 +12,9 @@
         .add-contact {
             display: none; /* Hides the add contact form by default */
         }
+        .edit-contact {
+            display: none; /* Hides the add contact form by default */
+        }
     </style>
 </head>
 <body>
@@ -26,8 +29,14 @@
         <!-- Display All Contacts -->
         <div class="form display-all">
             <header>
+                
                 <h1>All Contacts</h1>
                 <img src="plus_icon.png" alt="add contact" id="addContactButton"> <!--Need to find a plus icon-->
+                <form action="#">
+                    <div class="field input-field">
+                    <input type="text" placeholder="Search" class="input"  id="searchKeyword"></div>
+                    <input type="submit" class="buttons"  id="btnSearch" value="Go" onclick="doSearch();">
+                </form>
             </header>
             <div id="contactsList">
                 <!-- Contacts will be dynamically added here -->
@@ -39,24 +48,51 @@
             <header>
                 Add Contact
                 <img src="close_icon.png" alt="close" id="closeFormButton">
-            </header> 
+            </header> <!-- Need to find an X icon-->
 
-            <form action="AddContact" method="POST">
+            <form action="#">
                 <div class="field input-field">
-                    <input type="text" placeholder="Name" class="input" name="name">
+                    <input type="text"  id="name" placeholder="Name" class="input" name="name">
                 </div>
 
                 <div class="field input-field">
-                    <input type="text" placeholder="Phone" class="input" name="phone">
+                    <input type="text" id="phone" placeholder="Phone" class="input" name="phone">
                 </div>
 
                 <div class="field input-field">
-                    <input type="email" placeholder="Email" class="input" name="email">
+                    <input type="email" id="email" placeholder="Email" class="input" name="email">
                 </div>
 
                 <div class="field button-field">
-                    <button type="submit" class="buttons">Add Contact</button>
+                    <button type="submit" class="buttons" onclick="doAddContact();">Add Contact</button>
                 </div>
+                <p id="addContactResult"></p>
+            </form>
+        </div>
+        
+        <div class="form edit-contact" id="editContactForm">
+            <header>
+                Edit Contact
+                <img src="close_icon.png" alt="close" id="closeEditFormButton">
+            </header> <!-- Need to find an X icon-->
+
+            <form action="#">
+                <div class="field input-field">
+                    <input type="text"  id="editName" placeholder="Name" class="input" name="name">
+                </div>
+
+                <div class="field input-field">
+                    <input type="text" id="editPhone" placeholder="Phone" class="input" name="phone">
+                </div>
+
+                <div class="field input-field">
+                    <input type="email" id="editEmail" placeholder="Email" class="input" name="email">
+                </div>
+                    <input type ="hidden" id ="contactId" value = "">
+                <div class="field button-field">
+                    <button type="submit" class="buttons" onclick="doEditContact();">Edit Contact</button>
+                </div>
+                <p id="editContactResult"></p>
             </form>
         </div>
     </section>
@@ -73,6 +109,8 @@
     document.getElementById('closeFormButton').onclick = function() {
         document.getElementById('addContactForm').style.display = 'none';
     }
+
+
 </script>
 </body>
 </html>
