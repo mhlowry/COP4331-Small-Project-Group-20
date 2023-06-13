@@ -1,81 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Contactopia</title>
-        <style>
+<head>
+    <title>Contactopia</title>
+    <style>
         .header {
             margin: 0;
             padding: 0;
-            margin-bottom: -150px;           
+            margin-bottom: -150px;
         }
+
         .add-contact {
             display: none; /* Hides the add contact form by default */
         }
-        </style>
-    </head>
-    <body>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="stylecontacts.css">
-        <div class="parent-container">
-            <section class="header"> 
-                <a href="index.html"><img src="Contactopia.png" alt="Contactopia Logo" width="400" height="400"></a>            
-            </section>  
-        
-            <section class="container forms forms-row">
-                <!-- Display All Contacts -->
-                <div class="form display-all">
-                    <header>
-                        <h1>All Contacts</h1>
-                        <img src="plus_icon.png" alt="add contact" id="addContactButton"> <!--Need to find a plus icon-->
-                    </header>
-                    <div id="contactsList">
-                        <!-- Contacts will be dynamically added here -->
-                    </div>
-                </div>
+    </style>
+</head>
+<body>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="stylecontacts.css">
+<div class="parent-container">
+    <section class="header">
+        <a href="index.html"><img src="Contactopia.png" alt="Contactopia Logo" width="400" height="400"></a>
+    </section>
 
-                <!-- Add Contact -->
-                <div class="form add-contact" id="addContactForm">
-                    <header>
-                        Add Contact
-                        <img src="close_icon.png" alt="close" id="closeFormButton">
-                    </header> <!-- Need to find an X icon-->
-
-                    <form action="AddContact" method="POST">
-                        <div class="field input-field">
-                            <input type="text" placeholder="First Name" class="input" name="first_name">
-                        </div>
-
-                        <div class="field input-field">
-                            <input type="text" placeholder="Last Name" class="input" name="last_name">
-                        </div>
-
-                        <div class="field input-field">
-                            <input type="text" placeholder="Phone" class="input" name="phone">
-                        </div>
-
-                        <div class="field input-field">
-                            <input type="email" placeholder="Email" class="input" name="email">
-                        </div>
-
-                        <div class="field button-field">
-                            <button type="submit" class="buttons">Add Contact</button>
-                        </div>
-                    </form>
-                </div>
-            </section>
+    <section class="container forms forms-row">
+        <!-- Display All Contacts -->
+        <div class="form display-all">
+            <header>
+                <h1>All Contacts</h1>
+                <img src="plus_icon.png" alt="add contact" id="addContactButton"> <!--Need to find a plus icon-->
+            </header>
+            <div id="contactsList">
+                <!-- Contacts will be dynamically added here -->
+            </div>
         </div>
 
-        <!-- This script will fetch and display contacts -->
-        <script src="fetchContacts.js"></script>
+        <!-- Add Contact -->
+        <div class="form add-contact" id="addContactForm">
+            <header>
+                Add Contact
+                <img src="close_icon.png" alt="close" id="closeFormButton">
+            </header> <!-- Need to find an X icon-->
 
-        <!-- This script shows and hides the add contact form -->
-        <script>
-        document.getElementById('addContactButton').onclick = function() {
-            document.getElementById('addContactForm').style.display = 'block';
-        }
-        document.getElementById('closeFormButton').onclick = function() {
-            document.getElementById('addContactForm').style.display = 'none';
-        }
-        </script>
-    </body>
+            <form action="AddContact" method="POST">
+                <div class="field input-field">
+                    <input type="text" placeholder="Name" class="input" name="name">
+                </div>
+
+                <div class="field input-field">
+                    <input type="text" placeholder="Phone" class="input" name="phone">
+                </div>
+
+                <div class="field input-field">
+                    <input type="email" placeholder="Email" class="input" name="email">
+                </div>
+
+                <div class="field button-field">
+                    <button type="submit" class="buttons">Add Contact</button>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>
+
+<!-- This script will fetch and display contacts -->
+<script src="fetchContacts.js"></script>
+
+<!-- This script shows and hides the add contact form -->
+<script>
+    document.getElementById('addContactButton').onclick = function() {
+        document.getElementById('addContactForm').style.display = 'block';
+    }
+    document.getElementById('closeFormButton').onclick = function() {
+        document.getElementById('addContactForm').style.display = 'none';
+    }
+</script>
+</body>
 </html>
