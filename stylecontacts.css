@@ -129,7 +129,7 @@ img[src="plus_icon.png"] {
     max-width: 7%;
 }
 
-img[src="search_icon.png"] {
+searchIcon {
     max-height: auto;
     max-width: 7%;
 }
